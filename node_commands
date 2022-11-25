@@ -1,0 +1,26 @@
+
+> Web3 =  require('web3')
+####>web3 = new Web3('http://127.0.0.1:8545')
+
+web3 = new Web3('http://ec2-35-87-225-101.us-west-2.compute.amazonaws.com:8545')
+
+> sourceCode = fs.readFileSync('Hello.sol').toString();
+> compiler= require('solc')
+
+> helloInterface = JSON.parse(compiledCode.contracts[':hello'].interface)
+
+> helloByteCode = compiledCode.contracts[':hello'].bytecode
+
+> helloContract = new web3.eth.Contract(helloInterface)
+
+> web3.eth.getAccounts().then(function (result) {accounts = result})
+
+> helloContract.deploy({ data: helloByteCode } ).send({ from:accounts[0], gas: 470000}).then(function(result) { myContract = result; })
+
+
+> web3.eth.getBalance(accounts[1]).then(function(result) { console.log(web3.utils.fromWei(result,"ether"));  });
+
+> myContract.methods.setGreeting("hello blockchain").send({ from: accounts[0]});
+
+> myContract.methods.getGreeting().call().then(console.log);
+Promise { <pending> }
